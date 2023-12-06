@@ -1,0 +1,15 @@
+Use Case: Publish a Post 
+
+Editing a Post:
+•	User authentication: A safe way to log in and make sure that only people with permission can edit posts.
+•	Editing Interface: Simple editor with formatting options for quick and simple content modification.
+•	Allow writers to save revised posts as draughts before they are published.
+Delete a Post: 
+•	Confirmation Prompt: To avoid unintentional deletions, include a confirmation prompt.
+•	Archiving (Optional): Before permanently deleting deleted posts, you can choose to move them to an archive.
+Uploading and Embedding Images:
+•	Allow writers to upload and embed images straight into posts.
+Alt Text: 
+•	Include fields for authors to add descriptive alt text for images.
+Caption and Positioning: 
+•	Allow authors to add captions and control the positioning of images within the post.
