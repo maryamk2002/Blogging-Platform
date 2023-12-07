@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 Use Case Descriptions
 
 1. Analyzing and Moderating Posts:
@@ -49,7 +47,7 @@ The primary objective of the "Publish a Post" use case is to empower users to ef
 
 3.Find a post:
 
-The primary objective of a "Find a Post" feature on a blog website is to enhance user experience by providing a quick and efficient means for visitors to locate specific content within the blog.Further is defined below.
+The primary objective of a "Find a Post" feature on a blog website is to enhance user experience by providing a quick and efficient means for visitors to locate specific content within the blog. Further is defined below.
 
 
 -A prominent search bar on the blog website that enables users to input keywords, phrases, or topics to find relevant posts.
