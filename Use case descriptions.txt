@@ -1,33 +1,70 @@
+<<<<<<< HEAD
 
 Use Case Descriptions
 
 1. Analyzing and Moderating Posts:
+
 The primary goal of this use case is to empower moderators on a blogging platform to effectively analyze and moderate user-generated content within blog posts. This process ensures that the platform maintains a positive and safe environment for all users.
+
 -The moderator will be equipped with tools for content analysis to identify inappropriate language, hate speech, or any violations of community guidelines within the posts.
+
 -The system may utilize natural language processing algorithms to flag potential issues in the text.
+
 -A user-friendly moderation dashboard will be provided, displaying a list of pending posts for review.
+
 -Moderators will be able to take various actions based on their analysis, such as approving posts, requesting edits, or rejecting content that violates community standards.
+
 -The system should support the ability to send notifications to users about moderation decisions.
+
 -A comprehensive moderation history log will be maintained, detailing actions taken by moderators on specific posts.
+
 -The platform should facilitate communication between moderators and content creators, allowing for clarification or resolution of moderation issues.
+
 -Establishing a feedback loop helps improve the moderation process over time.
+
 -Moderators will have access to training materials and guidelines to understand platform-specific content policies.=======
 
 
 
-2. Publish a Post 
+2. Publish a Post:
 
-Editing a Post:
--User authentication: A safe way to log in and make sure that only people with permission can edit posts.
--Editing Interface: Simple editor with formatting options for quick and simple content modification.
--Allow writers to save revised posts as draughts before they are published.
-Delete a Post: 
--Confirmation Prompt: To avoid unintentional deletions, include a confirmation prompt.
--Archiving (Optional): Before permanently deleting deleted posts, you can choose to move them to an archive.
-Uploading and Embedding Images:
+The primary objective of the "Publish a Post" use case is to empower users to effortlessly create, refine, and manage their content on the blogging platform. 
+
+-A safe way to log in and make sure that only people with permission can edit posts.
+
+-Simple editor with formatting options for quick and simple content modification.
+
+-Allow writers to save revised posts as drafts before they are published.
+
+-Writers have the ability to delete their posts if they choose to remove the content from the platform.
+
+-To avoid unintentional deletions, include a confirmation prompt.
+
 -Allow writers to upload and embed images straight into posts.
-Alt Text: 
--Include fields for authors to add descriptive alt text for images.
--Caption and Positioning: 
+
 -Allow authors to add captions and control the positioning of images within the post.
+
+-The platform keeps a version history of posts, allowing writers to revert to previous versions if needed.
+
+
+3.Find a post:
+
+The primary objective of a "Find a Post" feature on a blog website is to enhance user experience by providing a quick and efficient means for visitors to locate specific content within the blog.Further is defined below.
+
+
+-A prominent search bar on the blog website that enables users to input keywords, phrases, or topics to find relevant posts.
+
+-Additional filters such as date range, category, tags, or author, providing users with the ability to narrow down their search results.
+
+-Highlights or bolds the searched keywords within the search results, making it easier for users to identify the relevant content.
+
+-Auto-suggests or auto-completes search queries as users type, helping them find relevant posts more efficiently.
+
+-Options to sort search results by relevance, date, popularity, or other relevant criteria, giving users flexibility in how they view the results.
+
+-Displays thumbnail previews or snippets of the blog posts in the search results, allowing users to get a glimpse of the content before clicking on the link.
+
+-Allows users to provide feedback on the search results or suggest improvements to enhance the overall search experience.
+
+-Links the search feature with blog categories and tags, enabling users to explore related content based on their search results.
 
