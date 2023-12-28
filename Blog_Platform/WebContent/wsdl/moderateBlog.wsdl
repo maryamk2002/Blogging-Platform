@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="blogModeration">
+    <complexType>
+     <sequence>
+      <element name="moderationDecision" type="xsd:string"/>
+      <element name="rejectionReason" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="blogModerationResponse">
+    <complexType>
+     <sequence>
+      <element name="blogModerationReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="blogModerationRequest">
+
+      <wsdl:part element="impl:blogModeration" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="blogModerationResponse">
+
+      <wsdl:part element="impl:blogModerationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="moderateBlog">
+
+      <wsdl:operation name="blogModeration">
+
+         <wsdl:input message="impl:blogModerationRequest" name="blogModerationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:blogModerationResponse" name="blogModerationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="moderateBlogSoapBinding" type="impl:moderateBlog">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="blogModeration">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="blogModerationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="blogModerationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="moderateBlogService">
+
+      <wsdl:port binding="impl:moderateBlogSoapBinding" name="moderateBlog">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/moderateBlog"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
