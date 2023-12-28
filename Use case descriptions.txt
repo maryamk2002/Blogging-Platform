@@ -1,15 +1,11 @@
-Use Case: Publish a Post 
-
-Editing a Post:
-•	User authentication: A safe way to log in and make sure that only people with permission can edit posts.
-•	Editing Interface: Simple editor with formatting options for quick and simple content modification.
-•	Allow writers to save revised posts as draughts before they are published.
-Delete a Post: 
-•	Confirmation Prompt: To avoid unintentional deletions, include a confirmation prompt.
-•	Archiving (Optional): Before permanently deleting deleted posts, you can choose to move them to an archive.
-Uploading and Embedding Images:
-•	Allow writers to upload and embed images straight into posts.
-Alt Text: 
-•	Include fields for authors to add descriptive alt text for images.
-Caption and Positioning: 
-•	Allow authors to add captions and control the positioning of images within the post.
+Analyzing and Moderating Posts:
+The primary goal of this use case is to empower moderators on a blogging platform to effectively analyze and moderate user-generated content within blog posts. This process ensures that the platform maintains a positive and safe environment for all users.
+The moderator will be equipped with tools for content analysis to identify inappropriate language, hate speech, or any violations of community guidelines within the posts.
+The system may utilize natural language processing algorithms to flag potential issues in the text.
+A user-friendly moderation dashboard will be provided, displaying a list of pending posts for review.
+Moderators will be able to take various actions based on their analysis, such as approving posts, requesting edits, or rejecting content that violates community standards.
+The system should support the ability to send notifications to users about moderation decisions.
+A comprehensive moderation history log will be maintained, detailing actions taken by moderators on specific posts.
+The platform should facilitate communication between moderators and content creators, allowing for clarification or resolution of moderation issues.
+Establishing a feedback loop helps improve the moderation process over time.
+Moderators will have access to training materials and guidelines to understand platform-specific content policies.
