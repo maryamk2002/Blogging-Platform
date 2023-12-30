@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -38,13 +38,24 @@
    <ns2:parameter qname="ns1:rejectionReason" type="xsd:string"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="blogModeration"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="moderateBlog"/>
-  <ns1:parameter name="className" value="main.moderateBlog"/>
-  <ns1:parameter name="wsdlServicePort" value="moderateBlog"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="moderateBlog"/>
+  <ns1:parameter name="className" value="main.moderateBlog"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="moderateBlogService"/>
+ </ns1:service>
+ <ns1:service name="view_Blog" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="viewBlog" qname="ns2:viewBlog" returnQName="ns2:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="viewBlog"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="view_Blog"/>
+  <ns1:parameter name="className" value="main.view_Blog"/>
+  <ns1:parameter name="wsdlServicePort" value="view_Blog"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="view_BlogService"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
