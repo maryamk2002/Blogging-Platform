@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="displayPost">
+    <complexType>
+     <sequence>
+      <element name="authorId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="displayPostResponse">
+    <complexType>
+     <sequence>
+      <element name="displayPostReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="displayPostRequest">
+
+      <wsdl:part element="impl:displayPost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="displayPostResponse">
+
+      <wsdl:part element="impl:displayPostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DisplayPost">
+
+      <wsdl:operation name="displayPost">
+
+         <wsdl:input message="impl:displayPostRequest" name="displayPostRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:displayPostResponse" name="displayPostResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DisplayPostSoapBinding" type="impl:DisplayPost">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="displayPost">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="displayPostRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="displayPostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DisplayPostService">
+
+      <wsdl:port binding="impl:DisplayPostSoapBinding" name="DisplayPost">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/DisplayPost"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
