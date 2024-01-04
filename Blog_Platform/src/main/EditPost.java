@@ -9,8 +9,8 @@ public class EditPost {
         	Class.forName("com.mysql.jdbc.Driver");
         	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogpost","root","");
            
-            PreparedStatement selectStatement = connection.prepareStatement("SELECT title, content FROM blogpost WHERE post_id = ? AND author_id = ?");
-            PreparedStatement updateStatement = connection.prepareStatement("UPDATE blogpost SET title = ?, content = ? WHERE post_id = ? AND author_id = ?");
+            PreparedStatement selectStatement = connection.prepareStatement("SELECT title, content FROM blog WHERE post_id = ? AND author_id = ?");
+            PreparedStatement updateStatement = connection.prepareStatement("UPDATE blog SET title = ?, content = ? WHERE post_id = ? AND author_id = ?");
 
             // Retrieve post details
             selectStatement.setInt(1, postId);

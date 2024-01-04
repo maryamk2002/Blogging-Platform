@@ -21,6 +21,7 @@
       <parameter name="wsdlPortType" value="DeletePost"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="removePost" qname="operNS:removePost" xmlns:operNS="http://main" returnQName="retNS:removePostReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:authorId" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:postId" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="removePost"/>

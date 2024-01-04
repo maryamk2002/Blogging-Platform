@@ -12,7 +12,7 @@ public class CreatePost {
 			Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogpost","root","");
 		
-		String insertQuery = "INSERT INTO blogpost (author_id, title, content, status, analysis_result) VALUES (?, ?, ?, 'pending', null)";
+		String insertQuery = "INSERT INTO blog (author_id, title, content, status, analysis_result) VALUES (?, ?, ?, 'pending', null)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
             preparedStatement.setInt(1, authorId);
             preparedStatement.setString(2, title);
@@ -27,6 +27,6 @@ public class CreatePost {
 			e.printStackTrace();
 		}
 		
-		return "Unseccussful.";
+		return "Unsuccessful.";
 	}
 }

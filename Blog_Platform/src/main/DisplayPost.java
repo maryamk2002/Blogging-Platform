@@ -12,7 +12,7 @@ public class DisplayPost{
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogpost", "root", "");
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT b.post_id,a.author_name, b.title, b.content FROM blogpost b JOIN author a ON b.author_id = a.author_id WHERE a.author_id = ?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT b.post_id,a.author_name, b.title, b.content FROM blog b JOIN author a ON b.author_id = a.author_id WHERE a.author_id = ?");
             preparedStatement.setInt(1, authorId);
             ResultSet rs = preparedStatement.executeQuery();
 
