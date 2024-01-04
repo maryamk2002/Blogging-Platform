@@ -1,9 +1,6 @@
 package main;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 
 public class view_Blog {
     public String viewBlog() {
@@ -11,7 +8,7 @@ public class view_Blog {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogpost", "root", "");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT post_id, author_name, title, content FROM blogpost JOIN author ON blogpost.author_id = author.author_id WHERE status = 'Pending'");
+            ResultSet rs = stmt.executeQuery("SELECT post_id, author_name, title, content FROM blog JOIN author ON blog.author_id = author.author_id WHERE status = 'Pending'");
             boolean pendingPostsExist = false;
 
             StringBuilder result = new StringBuilder();

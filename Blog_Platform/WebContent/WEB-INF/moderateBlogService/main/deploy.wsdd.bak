@@ -21,6 +21,7 @@
       <parameter name="wsdlPortType" value="moderateBlog"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="blogModeration" qname="operNS:blogModeration" xmlns:operNS="http://main" returnQName="retNS:blogModerationReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:postId" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:moderationDecision" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:rejectionReason" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
