@@ -4,54 +4,49 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="addPost">
+   <element name="searchPost">
     <complexType>
      <sequence>
-      <element name="authorId" type="xsd:int"/>
+      <element name="author_name" type="xsd:string"/>
       <element name="title" type="xsd:string"/>
-      <element name="content" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="addPostResponse">
+   <element name="searchPostResponse">
     <complexType>
      <sequence>
-      <element name="addPostReturn" type="xsd:string"/>
+      <element name="searchPostReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="addPostRequest">
+   <wsdl:message name="searchPostRequest">
 
-      <wsdl:part element="impl:addPost" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="addPostResponse">
-
-      <wsdl:part element="impl:addPostResponse" name="parameters">
+      <wsdl:part element="impl:searchPost" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
-   <wsdl:portType name="CreatePost">
-========
+   <wsdl:message name="searchPostResponse">
+
+      <wsdl:part element="impl:searchPostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="Getinfopost">
->>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
-      <wsdl:operation name="addPost">
+      <wsdl:operation name="searchPost">
 
-         <wsdl:input message="impl:addPostRequest" name="addPostRequest">
+         <wsdl:input message="impl:searchPostRequest" name="searchPostRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:addPostResponse" name="addPostResponse">
+         <wsdl:output message="impl:searchPostResponse" name="searchPostResponse">
 
        </wsdl:output>
 
@@ -59,25 +54,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
-   <wsdl:binding name="CreatePostSoapBinding" type="impl:CreatePost">
-========
    <wsdl:binding name="GetinfopostSoapBinding" type="impl:Getinfopost">
->>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="addPost">
+      <wsdl:operation name="searchPost">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="addPostRequest">
+         <wsdl:input name="searchPostRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="addPostResponse">
+         <wsdl:output name="searchPostResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -87,19 +78,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
-   <wsdl:service name="CreatePostService">
-
-      <wsdl:port binding="impl:CreatePostSoapBinding" name="CreatePost">
-
-         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/CreatePost"/>
-========
    <wsdl:service name="GetinfopostService">
 
       <wsdl:port binding="impl:GetinfopostSoapBinding" name="Getinfopost">
 
          <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/Getinfopost"/>
->>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
       </wsdl:port>
 

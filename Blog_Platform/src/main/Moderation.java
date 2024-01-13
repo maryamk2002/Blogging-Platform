@@ -13,7 +13,7 @@ public class Moderation {
             System.out.println("Connected to the database successfully!");
 
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM blogpost WHERE status = 'Pending'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM blog WHERE status = 'Pending'");
 
             boolean pendingPostsExist = false;
 
@@ -66,7 +66,7 @@ public class Moderation {
             Statement updateStmt = con.createStatement();
             String status = moderationDecision.split("-")[0];
             String analysisResult = moderationDecision.split("-")[1];
-            String updateQuery = "UPDATE blogpost SET status = '" + status + "', analysis_result = '" + analysisResult + "' WHERE post_id = " + postId;
+            String updateQuery = "UPDATE blog SET status = '" + status + "', analysis_result = '" + analysisResult + "' WHERE post_id = " + postId;
             int rowsUpdated = updateStmt.executeUpdate(updateQuery);
 
             if (rowsUpdated > 0) {

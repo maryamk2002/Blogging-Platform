@@ -1,11 +1,8 @@
 package main;
 
-<<<<<<<< HEAD:Blog_Platform/src/main/DisplayPost.java
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
+
 
 
 public class DisplayPost{
@@ -40,7 +37,7 @@ public class DisplayPost{
 
 }
 
-}
+
 
 
 
