@@ -1,5 +1,6 @@
 package main;
 
+<<<<<<<< HEAD:Blog_Platform/src/main/DisplayPost.java
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -36,4 +37,10 @@ public class DisplayPost{
 
         return "Program couldn't be executed";
     }
+
 }
+
+}
+
+
+

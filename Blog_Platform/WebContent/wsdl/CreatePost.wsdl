@@ -39,7 +39,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
    <wsdl:portType name="CreatePost">
+========
+   <wsdl:portType name="Getinfopost">
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
       <wsdl:operation name="addPost">
 
@@ -55,7 +59,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
    <wsdl:binding name="CreatePostSoapBinding" type="impl:CreatePost">
+========
+   <wsdl:binding name="GetinfopostSoapBinding" type="impl:Getinfopost">
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -79,11 +87,19 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
    <wsdl:service name="CreatePostService">
 
       <wsdl:port binding="impl:CreatePostSoapBinding" name="CreatePost">
 
          <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/CreatePost"/>
+========
+   <wsdl:service name="GetinfopostService">
+
+      <wsdl:port binding="impl:GetinfopostSoapBinding" name="Getinfopost">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/Getinfopost"/>
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
 
       </wsdl:port>
 
