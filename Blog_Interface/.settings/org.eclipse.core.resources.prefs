@@ -1,10 +1,8 @@
 eclipse.preferences.version=1
-
 encoding//src/getpost/Getinfopost.java=UTF-8
 encoding//src/getpost/GetinfopostService.java=UTF-8
 encoding//src/getpost/GetinfopostServiceLocator.java=UTF-8
 encoding//src/getpost/GetinfopostSoapBindingStub.java=UTF-8
-
 encoding//src/main/CreatePost.java=UTF-8
 encoding//src/main/CreatePostService.java=UTF-8
 encoding//src/main/CreatePostServiceLocator.java=UTF-8
@@ -21,4 +19,12 @@ encoding//src/main/EditPost.java=UTF-8
 encoding//src/main/EditPostService.java=UTF-8
 encoding//src/main/EditPostServiceLocator.java=UTF-8
 encoding//src/main/EditPostSoapBindingStub.java=UTF-8
+encoding//src/moderatemain/ModerateBlog.java=UTF-8
+encoding//src/moderatemain/ModerateBlogService.java=UTF-8
+encoding//src/moderatemain/ModerateBlogServiceLocator.java=UTF-8
+encoding//src/moderatemain/ModerateBlogSoapBindingStub.java=UTF-8
+encoding//src/resultmain/View_Blog.java=UTF-8
+encoding//src/resultmain/View_BlogService.java=UTF-8
+encoding//src/resultmain/View_BlogServiceLocator.java=UTF-8
+encoding//src/resultmain/View_BlogSoapBindingStub.java=UTF-8
 
