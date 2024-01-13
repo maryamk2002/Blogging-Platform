@@ -60,8 +60,22 @@
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="ModerationService"/>
  </ns1:service>
+ <ns1:service name="Getinfopost" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="searchPost" qname="ns3:searchPost" returnQName="ns3:searchPostReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:author_name" type="xsd:string"/>
+   <ns1:parameter qname="ns3:title" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="searchPost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Getinfopost"/>
+  <ns1:parameter name="className" value="main.Getinfopost"/>
+  <ns1:parameter name="wsdlServicePort" value="Getinfopost"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="GetinfopostService"/>
+ </ns1:service>
  <ns1:service name="view_Blog" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="viewBlog" qname="ns3:viewBlog" returnQName="ns3:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="viewBlog" qname="ns4:viewBlog" returnQName="ns4:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   <ns1:parameter name="allowedMethods" value="viewBlog"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="view_Blog"/>
