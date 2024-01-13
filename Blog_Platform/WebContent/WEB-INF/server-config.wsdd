@@ -129,6 +129,20 @@
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="EditPostService"/>
  </ns1:service>
+ <ns1:service name="get_info_post" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="searchPost" qname="ns8:searchPost" returnQName="ns8:searchPostReturn" returnType="xsd:string" soapAction="" xmlns:ns8="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:author_name" type="xsd:string"/>
+   <ns1:parameter qname="ns8:title" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="searchPost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="get_info_post"/>
+  <ns1:parameter name="className" value="main.get_info_post"/>
+  <ns1:parameter name="wsdlServicePort" value="get_info_post"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="get_info_postService"/>
+ </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
    <ns1:handler type="URLMapper"/>
