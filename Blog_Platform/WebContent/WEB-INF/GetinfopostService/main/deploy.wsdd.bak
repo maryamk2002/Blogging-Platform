@@ -10,15 +10,15 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from get_info_postService WSDL service -->
+  <!-- Services from GetinfopostService WSDL service -->
 
-  <service name="get_info_post" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Getinfopost" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="get_info_postService"/>
+      <parameter name="wsdlServiceElement" value="GetinfopostService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="get_info_post"/>
-      <parameter name="className" value="main.Get_info_postSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="get_info_post"/>
+      <parameter name="wsdlServicePort" value="Getinfopost"/>
+      <parameter name="className" value="main.GetinfopostSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Getinfopost"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="searchPost" qname="operNS:searchPost" xmlns:operNS="http://main" returnQName="retNS:searchPostReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:author_name" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>

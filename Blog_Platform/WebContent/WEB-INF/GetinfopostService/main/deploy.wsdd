@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from get_info_postService WSDL service -->
+  <!-- Services from GetinfopostService WSDL service -->
 
-  <service name="get_info_post" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Getinfopost" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="get_info_postService"/>
+      <parameter name="wsdlServiceElement" value="GetinfopostService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="get_info_post"/>
-      <parameter name="className" value="main.get_info_post"/>
-      <parameter name="wsdlPortType" value="get_info_post"/>
+      <parameter name="wsdlServicePort" value="Getinfopost"/>
+      <parameter name="className" value="main.Getinfopost"/>
+      <parameter name="wsdlPortType" value="Getinfopost"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="searchPost" qname="operNS:searchPost" returnQName="retNS:searchPostReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:author_name" type="tns:string"/>

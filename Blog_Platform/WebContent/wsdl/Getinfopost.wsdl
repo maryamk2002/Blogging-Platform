@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addPost">
+    <complexType>
+     <sequence>
+      <element name="authorId" type="xsd:int"/>
+      <element name="title" type="xsd:string"/>
+      <element name="content" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addPostResponse">
+    <complexType>
+     <sequence>
+      <element name="addPostReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addPostRequest">
+
+      <wsdl:part element="impl:addPost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPostResponse">
+
+      <wsdl:part element="impl:addPostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
+   <wsdl:portType name="CreatePost">
+========
+   <wsdl:portType name="Getinfopost">
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
+
+      <wsdl:operation name="addPost">
+
+         <wsdl:input message="impl:addPostRequest" name="addPostRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addPostResponse" name="addPostResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
+   <wsdl:binding name="CreatePostSoapBinding" type="impl:CreatePost">
+========
+   <wsdl:binding name="GetinfopostSoapBinding" type="impl:Getinfopost">
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addPost">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addPostRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addPostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+<<<<<<<< HEAD:Blog_Platform/WebContent/wsdl/CreatePost.wsdl
+   <wsdl:service name="CreatePostService">
+
+      <wsdl:port binding="impl:CreatePostSoapBinding" name="CreatePost">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/CreatePost"/>
+========
+   <wsdl:service name="GetinfopostService">
+
+      <wsdl:port binding="impl:GetinfopostSoapBinding" name="Getinfopost">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/Getinfopost"/>
+>>>>>>>> Adeel:Blog_Platform/WebContent/wsdl/Getinfopost.wsdl
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
