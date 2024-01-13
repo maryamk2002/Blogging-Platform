@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="removePost">
+    <complexType>
+     <sequence>
+      <element name="postId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removePostResponse">
+    <complexType>
+     <sequence>
+      <element name="removePostReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removePostResponse">
+
+      <wsdl:part element="impl:removePostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removePostRequest">
+
+      <wsdl:part element="impl:removePost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DeletePost">
+
+      <wsdl:operation name="removePost">
+
+         <wsdl:input message="impl:removePostRequest" name="removePostRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removePostResponse" name="removePostResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DeletePostSoapBinding" type="impl:DeletePost">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="removePost">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removePostRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removePostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DeletePostService">
+
+      <wsdl:port binding="impl:DeletePostSoapBinding" name="DeletePost">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Platform/services/DeletePost"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
