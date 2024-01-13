@@ -9,24 +9,25 @@
 </head>
 <body>
 
-<%
+<% 
     // Handle the display logic
     String authorIdStr = request.getParameter("authorId");
     String displayResult = "";
     String actionResult = "";
     int authorId = 0;
     int postId = 0;
-
+    DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
     // Flag to check if the author exists
     boolean authorExists = false;
 
     if (authorIdStr != null && !authorIdStr.isEmpty()) {
         authorId = Integer.parseInt(authorIdStr);
-        DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
+   
         displayResult = displayPost.displayPost(authorId);
 
         if (!displayResult.equals("No author exists.")) {
             authorExists = true;
+   
             
         
         }
@@ -124,7 +125,7 @@
     String action = request.getParameter("action");
 
     if (action != null && !action.isEmpty()) {
-    	 DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
+   
 
         String title, content;
 
@@ -135,7 +136,7 @@
 
             CreatePost createPost = new CreatePostProxy().getCreatePost();
             actionResult = createPost.addPost(authorId, title, content);
-            displayResult = displayPost.displayPost(authorId);
+           // displayResult = displayPost.displayPost(authorId);
         } else if ("edit".equals(action)) {
             authorId = Integer.parseInt(request.getParameter("editAuthorId"));
             postId = Integer.parseInt(request.getParameter("editPostId"));
@@ -144,14 +145,14 @@
 
             EditPost editPost = new EditPostProxy().getEditPost();
             actionResult = editPost.editPost(authorId, postId, title, content);
-            displayResult = displayPost.displayPost(authorId);
+           // displayResult = displayPost.displayPost(authorId);
         } else if ("delete".equals(action)) {
      
             postId = Integer.parseInt(request.getParameter("deletePostId"));
 
             DeletePost deletePost = new DeletePostProxy().getDeletePost();
             actionResult = deletePost.removePost(postId);
-            displayResult = displayPost.displayPost(authorId);
+           // displayResult = displayPost.displayPost(authorId);
             
         }
         
@@ -162,10 +163,10 @@
 %>
 
 <%
-    if (!displayResult.isEmpty()) {
+   if (!displayResult.isEmpty()) {
 %>
     <hr>
-    <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
+ <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
 <%
     }
 %>
@@ -175,7 +176,7 @@
 %>
     <hr>
     <p><%= actionResult.replaceAll("\n", "<br/>") %></p>
-     <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
+
 <%
     }
 %>
