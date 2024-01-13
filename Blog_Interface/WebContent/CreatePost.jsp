@@ -1,5 +1,4 @@
 <%@ page import="main.*" %>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,113 +8,129 @@
 </head>
 <body>
 
-<% 
-    // Handle the display logic
+<%
+   
     String authorIdStr = request.getParameter("authorId");
+    String password = request.getParameter("password");
     String displayResult = "";
     String actionResult = "";
     int authorId = 0;
     int postId = 0;
-    DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
-    // Flag to check if the author exists
+
+
     boolean authorExists = false;
+
 
     if (authorIdStr != null && !authorIdStr.isEmpty()) {
         authorId = Integer.parseInt(authorIdStr);
-   
-        displayResult = displayPost.displayPost(authorId);
+        DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
+        displayResult = displayPost.displayPost(authorId, password);
 
-        if (!displayResult.equals("No author exists.")) {
+        if (!displayResult.equals("No author exists.") && !displayResult.equals("No posts found for the provided credentials.")) {
             authorExists = true;
-   
             
-        
+       
         }
     }
 %>
 
 <hr>
 
-<!-- Form to enter author ID and display posts -->
-<form action="" method="post">
-    <label>Enter Author ID:</label>
-     <br>
-      
-    <input type="text" name="authorId" required>
-    <br>
-     <br>
-    <button type="submit">Display Posts</button>
-</form>
-
 <%
-    if (authorExists) {
+    if (!authorExists) {
+        // If author doesn't exist, show the form to enter authorId and password
+%>
+        <!-- Form to enter author ID and password -->
+        <form action="" method="post">
+            <label>Enter Author ID:</label>
+            <input type="text" name="authorId" required>
+            <br>
+                       <br>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <br>
+                      <br>
+            <button type="submit">Display Posts</button>
+        </form>
+<%
+    } else {
+      
+%>
+        <h2>Welcome To Your Portal!</h2>
+        <h2>Author ID: <%= authorId %></h2>
+        <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
+<%
+    }
 %>
 
 <hr>
 
-<!-- Form to create a new post -->
-<form action="" method="post">
- <br>
-    <h2>Create Post</h2>
-    <label>Author ID:</label>
-     <br>
-    <input type="text" name="createAuthorId" value="<%= authorId %>" readonly>
-    <br>
-     <br>
-    <label>Title:</label>
-    <input type="text" name="createTitle" required>
-    <br>
-     <br>
-    <label>Content:</label>
-    <textarea name="createContent" rows="4" required></textarea>
-    <br>
-     <br>
-    <button type="submit" name="action" value="create">Create Post</button>
-</form>
+<%
+    if (authorExists) {
+      
+%>
+        <!-- Form to create a new post -->
+        <form action="" method="post">
+            <h2>Create Post</h2>
+                       <br>
+            <label>Author ID:</label>
+                       <br>
+            <input type="text" name="createAuthorId" value="<%= authorId %>" readonly>
+            <br>
+                       <br>
+            <label>Title:</label>
+                       <br>
+            <input type="text" name="createTitle" required>
+            <br>
+                       <br>
+            <label>Content:</label>
+                       <br>
+            <textarea name="createContent" rows="4" required></textarea>
+            <br>
+                       <br>
+            <button type="submit" name="action" value="create">Create Post</button>
+                       <br>
+        </form>
 
-<hr>
+        <!-- Form to edit an existing post -->
+        <form action="" method="post">
+            <h2>Edit Post</h2>
+                       <br>
+            <label>Author ID:</label>
+                                  <br>
+            <input type="text" name="editAuthorId" value="<%= authorId %>" readonly>
+            <br>
+                       <br>
+            <label>Post ID:</label>
+                       <br>
+            <input type="text" name="editPostId" required>
+            <br>
+                       <br>
+            <label>New Title:</label>
+                       <br>
+            <input type="text" name="editTitle" required>
+            <br>
+                       <br>
+            <label>New Content:</label>
+              <br>
+            <textarea name="editContent" rows="4" required></textarea>
+            <br>
+                       <br>
+            <button type="submit" name="action" value="edit">Edit Post</button>
+                       <br>
+        </form>
 
-<!-- Form to edit an existing post -->
-<form action="" method="post">
- <br>
-    <h2>Edit Post</h2>
-    
-    <label>Author ID:</label>
-     <br>
-    <input type="text" name="editAuthorId" value="<%= authorId %>" readonly>
-    <br>
-     <br>
-    <label>Post ID:</label>
-    <input type="text" name="editPostId" required>
-    <br>
-     <br>
-    <label>New Title:</label>
-    <input type="text" name="editTitle" required>
-    <br>
-     <br>
-    <label>New Content:</label>
-    <textarea name="editContent" rows="4" required></textarea>
-    <br>
-     <br>
-    <button type="submit" name="action" value="edit">Edit Post</button>
-</form>
-
-<hr>
-
-<!-- Form to delete an existing post -->
-<form action="" method="post">
- <br>
-    <h2>Delete Post</h2>
-     <br>
-    <label>Post ID:</label>
-     <br>
-      <br>
-    <input type="text" name="deletePostId" required>
-    <br>
-     <br>
-    <button type="submit" name="action" value="delete">Delete Post</button>
-</form>
-
+        <!-- Form to delete an existing post -->
+        <form action="" method="post">
+            <h2>Delete Post</h2>
+                       <br>
+            <label>Post ID:</label>
+                       <br>
+            <input type="text" name="deletePostId" required>
+            <br>           <br>
+            <button type="submit" name="action" value="delete">Delete Post</button>
+                       <br>
+        </form>
 <%
     }
 %>
@@ -125,7 +140,6 @@
     String action = request.getParameter("action");
 
     if (action != null && !action.isEmpty()) {
-   
 
         String title, content;
 
@@ -136,7 +150,6 @@
 
             CreatePost createPost = new CreatePostProxy().getCreatePost();
             actionResult = createPost.addPost(authorId, title, content);
-           // displayResult = displayPost.displayPost(authorId);
         } else if ("edit".equals(action)) {
             authorId = Integer.parseInt(request.getParameter("editAuthorId"));
             postId = Integer.parseInt(request.getParameter("editPostId"));
@@ -145,28 +158,24 @@
 
             EditPost editPost = new EditPostProxy().getEditPost();
             actionResult = editPost.editPost(authorId, postId, title, content);
-           // displayResult = displayPost.displayPost(authorId);
         } else if ("delete".equals(action)) {
-     
+            authorId = Integer.parseInt(authorIdStr);
             postId = Integer.parseInt(request.getParameter("deletePostId"));
 
             DeletePost deletePost = new DeletePostProxy().getDeletePost();
             actionResult = deletePost.removePost(postId);
-           // displayResult = displayPost.displayPost(authorId);
-            
         }
-        
-        // Display posts after the action
-       
-        displayResult = displayPost.displayPost(authorId);
+  
+        DisplayPost displayPost = new DisplayPostProxy().getDisplayPost();
+        displayResult = displayPost.displayPost(authorId, password);
     }
 %>
 
 <%
-   if (!displayResult.isEmpty()) {
+    if (!displayResult.isEmpty()) {
 %>
     <hr>
- <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
+    <p><%= displayResult.replaceAll("\n", "<br/>") %></p>
 <%
     }
 %>
@@ -176,7 +185,6 @@
 %>
     <hr>
     <p><%= actionResult.replaceAll("\n", "<br/>") %></p>
-
 <%
     }
 %>

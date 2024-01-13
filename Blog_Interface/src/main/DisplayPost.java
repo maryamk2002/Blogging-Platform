@@ -8,5 +8,5 @@
 package main;
 
 public interface DisplayPost extends java.rmi.Remote {
-    public java.lang.String displayPost(int authorId) throws java.rmi.RemoteException;
+    public java.lang.String displayPost(int authorId, java.lang.String password) throws java.rmi.RemoteException;
 }

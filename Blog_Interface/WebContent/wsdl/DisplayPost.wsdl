@@ -8,6 +8,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="authorId" type="xsd:int"/>
+      <element name="password" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>

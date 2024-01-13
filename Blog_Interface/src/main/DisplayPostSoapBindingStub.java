@@ -27,6 +27,8 @@ public class DisplayPostSoapBindingStub extends org.apache.axis.client.Stub impl
         oper.setName("displayPost");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "authorId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://main", "displayPostReturn"));
@@ -87,7 +89,7 @@ public class DisplayPostSoapBindingStub extends org.apache.axis.client.Stub impl
         }
     }
 
-    public java.lang.String displayPost(int authorId) throws java.rmi.RemoteException {
+    public java.lang.String displayPost(int authorId, java.lang.String password) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -103,7 +105,7 @@ public class DisplayPostSoapBindingStub extends org.apache.axis.client.Stub impl
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(authorId)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(authorId), password});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

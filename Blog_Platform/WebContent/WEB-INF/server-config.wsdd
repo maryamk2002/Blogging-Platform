@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -29,11 +29,11 @@
    <ns2:parameter qname="ns1:content" type="xsd:string"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="addPost"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="CreatePost"/>
-  <ns1:parameter name="className" value="main.CreatePost"/>
-  <ns1:parameter name="wsdlServicePort" value="CreatePost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="CreatePost"/>
+  <ns1:parameter name="className" value="main.CreatePost"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="CreatePostService"/>
  </ns1:service>
@@ -46,13 +46,14 @@
  <ns1:service name="DisplayPost" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="displayPost" qname="ns2:displayPost" returnQName="ns2:displayPostReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns2:authorId" type="xsd:int"/>
+   <ns1:parameter qname="ns2:password" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="displayPost"/>
-  <ns1:parameter name="wsdlPortType" value="DisplayPost"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="DisplayPost"/>
+  <ns1:parameter name="wsdlPortType" value="DisplayPost"/>
   <ns1:parameter name="className" value="main.DisplayPost"/>
+  <ns1:parameter name="wsdlServicePort" value="DisplayPost"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="DisplayPostService"/>
  </ns1:service>
@@ -67,11 +68,11 @@
    <ns1:parameter qname="ns3:rejectionReason" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="blogModeration"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="moderateBlog"/>
-  <ns1:parameter name="className" value="main.moderateBlog"/>
-  <ns1:parameter name="wsdlServicePort" value="moderateBlog"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="moderateBlog"/>
+  <ns1:parameter name="className" value="main.moderateBlog"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="moderateBlogService"/>
  </ns1:service>
@@ -80,11 +81,11 @@
    <ns1:parameter qname="ns4:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="main"/>
-  <ns1:parameter name="wsdlPortType" value="Moderation"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Moderation"/>
+  <ns1:parameter name="wsdlPortType" value="Moderation"/>
   <ns1:parameter name="className" value="main.Moderation"/>
+  <ns1:parameter name="wsdlServicePort" value="Moderation"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="ModerationService"/>
  </ns1:service>
@@ -94,11 +95,11 @@
    <ns1:parameter qname="ns5:title" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="searchPost"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Getinfopost"/>
-  <ns1:parameter name="className" value="main.Getinfopost"/>
-  <ns1:parameter name="wsdlServicePort" value="Getinfopost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Getinfopost"/>
+  <ns1:parameter name="className" value="main.Getinfopost"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="GetinfopostService"/>
  </ns1:service>
@@ -108,22 +109,22 @@
    <ns1:parameter qname="ns6:postId" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="removePost"/>
-  <ns1:parameter name="wsdlPortType" value="DeletePost"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="DeletePost"/>
+  <ns1:parameter name="wsdlPortType" value="DeletePost"/>
   <ns1:parameter name="className" value="main.DeletePost"/>
+  <ns1:parameter name="wsdlServicePort" value="DeletePost"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="DeletePostService"/>
  </ns1:service>
  <ns1:service name="view_Blog" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="viewBlog" qname="ns7:viewBlog" returnQName="ns7:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   <ns1:parameter name="allowedMethods" value="viewBlog"/>
-  <ns1:parameter name="wsdlPortType" value="view_Blog"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="view_Blog"/>
+  <ns1:parameter name="wsdlPortType" value="view_Blog"/>
   <ns1:parameter name="className" value="main.view_Blog"/>
+  <ns1:parameter name="wsdlServicePort" value="view_Blog"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="view_BlogService"/>
  </ns1:service>
@@ -135,11 +136,11 @@
    <ns1:parameter qname="ns8:updatedContent" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="editPost"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="EditPost"/>
-  <ns1:parameter name="className" value="main.EditPost"/>
-  <ns1:parameter name="wsdlServicePort" value="EditPost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="EditPost"/>
+  <ns1:parameter name="className" value="main.EditPost"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="EditPostService"/>
  </ns1:service>
