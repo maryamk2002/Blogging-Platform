@@ -31,7 +31,7 @@ public class EditPost {
 
                 if (rowsAffected > 0) {
                     // Return a message with both current and updated details
-                    return "Post updated successfully!\nCurrent Title: " + currentTitle + "\nCurrent Content: " + currentContent;
+                    return "Post updated successfully!\nPreviour Title: " + currentTitle + "\nPrevious Content: " + currentContent;
                 } else {
                     return "No matching post found for the given Author ID and Post ID.";
                 }

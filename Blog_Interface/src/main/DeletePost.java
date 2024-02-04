@@ -8,5 +8,5 @@
 package main;
 
 public interface DeletePost extends java.rmi.Remote {
-    public java.lang.String removePost(int postId) throws java.rmi.RemoteException;
+    public java.lang.String removePost(int authorId, int postId) throws java.rmi.RemoteException;
 }

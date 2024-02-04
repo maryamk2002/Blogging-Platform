@@ -50,5 +50,11 @@ public class DisplayPostProxy implements main.DisplayPost {
     return displayPost.displayPost(authorId, password);
   }
   
+  public java.lang.String getAndDisplayPosts(int authorId, java.lang.String password) throws java.rmi.RemoteException{
+    if (displayPost == null)
+      _initDisplayPostProxy();
+    return displayPost.getAndDisplayPosts(authorId, password);
+  }
+  
   
 }

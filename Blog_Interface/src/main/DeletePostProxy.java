@@ -44,10 +44,10 @@ public class DeletePostProxy implements main.DeletePost {
     return deletePost;
   }
   
-  public java.lang.String removePost(int postId) throws java.rmi.RemoteException{
+  public java.lang.String removePost(int authorId, int postId) throws java.rmi.RemoteException{
     if (deletePost == null)
       _initDeletePostProxy();
-    return deletePost.removePost(postId);
+    return deletePost.removePost(authorId, postId);
   }
   
   

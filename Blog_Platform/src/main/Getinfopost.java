@@ -19,10 +19,10 @@ public class Getinfopost{
             StringBuilder result = new StringBuilder();
 
             while (rs.next()) {
-                result.append("Post ID: ").append(rs.getInt("post_id")).append("\n")
-                        .append(" Author Name: ").append(rs.getString("author_name")).append("\n")
-                        .append(" Title: ").append(rs.getString("title")).append("\n")
-                        .append(" Content:").append(rs.getString("content")).append("\n\n");
+            	 result.append("\n").append("<strong>Post ID:</strong>").append("<strong>").append(rs.getInt("post_id")).append("</strong>").append("\n").append("\n")
+                 .append(" Author Name: ").append(rs.getString("author_name")).append("\n").append("\n")
+                 .append(" Title: ").append(rs.getString("title")).append("\n").append("\n")
+                 .append(" Content:").append(rs.getString("content")).append("\n");
             }
 
             con.close();

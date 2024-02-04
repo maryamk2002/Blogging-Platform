@@ -48,7 +48,11 @@
    <ns1:parameter qname="ns2:authorId" type="xsd:int"/>
    <ns1:parameter qname="ns2:password" type="xsd:string"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="displayPost"/>
+  <ns1:operation name="getAndDisplayPosts" qname="ns3:getAndDisplayPosts" returnQName="ns3:getAndDisplayPostsReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:authorId" type="xsd:int"/>
+   <ns1:parameter qname="ns3:password" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="displayPost getAndDisplayPosts"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="DisplayPost"/>
   <ns1:parameter name="className" value="main.DisplayPost"/>
@@ -62,10 +66,10 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="moderateBlog" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="blogModeration" qname="ns3:blogModeration" returnQName="ns3:blogModerationReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns3:postId" type="xsd:int"/>
-   <ns1:parameter qname="ns3:moderationDecision" type="xsd:string"/>
-   <ns1:parameter qname="ns3:rejectionReason" type="xsd:string"/>
+  <ns1:operation name="blogModeration" qname="ns4:blogModeration" returnQName="ns4:blogModerationReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:postId" type="xsd:int"/>
+   <ns1:parameter qname="ns4:moderationDecision" type="xsd:string"/>
+   <ns1:parameter qname="ns4:rejectionReason" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="blogModeration"/>
   <ns1:parameter name="wsdlPortType" value="moderateBlog"/>
@@ -77,8 +81,8 @@
   <ns1:parameter name="wsdlServiceElement" value="moderateBlogService"/>
  </ns1:service>
  <ns1:service name="Moderation" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="main" qname="ns4:main" soapAction="" xmlns:ns4="http://main">
-   <ns1:parameter qname="ns4:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="main" qname="ns5:main" soapAction="" xmlns:ns5="http://main">
+   <ns1:parameter qname="ns5:args" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="main"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -90,9 +94,9 @@
   <ns1:parameter name="wsdlServiceElement" value="ModerationService"/>
  </ns1:service>
  <ns1:service name="Getinfopost" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="searchPost" qname="ns5:searchPost" returnQName="ns5:searchPostReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns5:author_name" type="xsd:string"/>
-   <ns1:parameter qname="ns5:title" type="xsd:string"/>
+  <ns1:operation name="searchPost" qname="ns6:searchPost" returnQName="ns6:searchPostReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:author_name" type="xsd:string"/>
+   <ns1:parameter qname="ns6:title" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="searchPost"/>
   <ns1:parameter name="wsdlPortType" value="Getinfopost"/>
@@ -104,21 +108,21 @@
   <ns1:parameter name="wsdlServiceElement" value="GetinfopostService"/>
  </ns1:service>
  <ns1:service name="DeletePost" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="removePost" qname="ns6:removePost" returnQName="ns6:removePostReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns6:authorId" type="xsd:int"/>
-   <ns1:parameter qname="ns6:postId" type="xsd:int"/>
+  <ns1:operation name="removePost" qname="ns7:removePost" returnQName="ns7:removePostReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:authorId" type="xsd:int"/>
+   <ns1:parameter qname="ns7:postId" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="removePost"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="DeletePost"/>
-  <ns1:parameter name="className" value="main.DeletePost"/>
-  <ns1:parameter name="wsdlServicePort" value="DeletePost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="DeletePost"/>
+  <ns1:parameter name="className" value="main.DeletePost"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="DeletePostService"/>
  </ns1:service>
  <ns1:service name="view_Blog" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="viewBlog" qname="ns7:viewBlog" returnQName="ns7:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="viewBlog" qname="ns8:viewBlog" returnQName="ns8:viewBlogReturn" returnType="xsd:string" soapAction="" xmlns:ns8="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   <ns1:parameter name="allowedMethods" value="viewBlog"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="view_Blog"/>
@@ -129,11 +133,11 @@
   <ns1:parameter name="wsdlServiceElement" value="view_BlogService"/>
  </ns1:service>
  <ns1:service name="EditPost" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="editPost" qname="ns8:editPost" returnQName="ns8:editPostReturn" returnType="xsd:string" soapAction="" xmlns:ns8="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns8:authorId" type="xsd:int"/>
-   <ns1:parameter qname="ns8:postId" type="xsd:int"/>
-   <ns1:parameter qname="ns8:updatedTitle" type="xsd:string"/>
-   <ns1:parameter qname="ns8:updatedContent" type="xsd:string"/>
+  <ns1:operation name="editPost" qname="ns9:editPost" returnQName="ns9:editPostReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns9:authorId" type="xsd:int"/>
+   <ns1:parameter qname="ns9:postId" type="xsd:int"/>
+   <ns1:parameter qname="ns9:updatedTitle" type="xsd:string"/>
+   <ns1:parameter qname="ns9:updatedContent" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="editPost"/>
   <ns1:parameter name="wsdlPortType" value="EditPost"/>

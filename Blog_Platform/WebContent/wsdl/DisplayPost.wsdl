@@ -19,12 +19,43 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getAndDisplayPosts">
+    <complexType>
+     <sequence>
+      <element name="authorId" type="xsd:int"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAndDisplayPostsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAndDisplayPostsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
    <wsdl:message name="displayPostRequest">
 
       <wsdl:part element="impl:displayPost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAndDisplayPostsResponse">
+
+      <wsdl:part element="impl:getAndDisplayPostsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAndDisplayPostsRequest">
+
+      <wsdl:part element="impl:getAndDisplayPosts" name="parameters">
 
       </wsdl:part>
 
@@ -52,6 +83,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getAndDisplayPosts">
+
+         <wsdl:input message="impl:getAndDisplayPostsRequest" name="getAndDisplayPostsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAndDisplayPostsResponse" name="getAndDisplayPostsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="DisplayPostSoapBinding" type="impl:DisplayPost">
@@ -69,6 +112,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="displayPostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAndDisplayPosts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAndDisplayPostsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAndDisplayPostsResponse">
 
             <wsdlsoap:body use="literal"/>
 
