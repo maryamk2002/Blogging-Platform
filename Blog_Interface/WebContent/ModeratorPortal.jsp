@@ -83,69 +83,78 @@ button:hover {
     <h1>Welcome to your portal!</h1>
     <form action="" method="post">
         <%  
-        String postId = request.getParameter("postId");
-        String moderationDecision = request.getParameter("moderationDecision");
-        String rejectionReason = request.getParameter("reason");
-        String moderationResult = null;
-        boolean inputError = false;
-        if (postId == null || moderationDecision == null || postId.trim().isEmpty() || moderationDecision.trim().isEmpty()) {
-            inputError = true;
-        } else {
-            ModerateBlog obj = new ModerateBlogProxy().getModerateBlog();
-            moderationResult = obj.blogModeration(Integer.parseInt(postId), moderationDecision, rejectionReason);
-        }
+String postId = request.getParameter("postId");
+String moderationDecision = request.getParameter("moderationDecision");
+String rejectionReason = request.getParameter("reason");
+String moderationResult = null;
+boolean inputError = false;
 
-        View_Blog vb = new View_BlogProxy().getView_Blog();
-        String view = vb.viewBlog();
-        %>
+if (postId == null || moderationDecision == null || postId.trim().isEmpty() || moderationDecision.trim().isEmpty()) {
+    inputError = true;
+} else {
+    if (moderationDecision.equals("Rejected") && (rejectionReason == null || rejectionReason.trim().isEmpty())) {
+        // Rejection reason is required for rejected decision
+    } else if (moderationDecision.equals("Approved") && (rejectionReason != null && !rejectionReason.trim().isEmpty())) {
+        // Rejection reason is not required for approved decision
+    } else {
+        ModerateBlog obj = new ModerateBlogProxy().getModerateBlog();
+        moderationResult = obj.blogModeration(Integer.parseInt(postId), moderationDecision, rejectionReason);
+    }
+}
 
-        <% if (view.equals("No pending posts.")) { %>
-            <p>No pending posts exist</p>
-        <% } else { %>
-            <label>All pending Blog Posts:</label>
-            <br/>
-      
-            <p><%= view.replaceAll("\n", "<br/>") %></p>
-            <br>
+View_Blog vb = new View_BlogProxy().getView_Blog();
+String view = vb.viewBlog();
+%>
 
-  <div style="text-align: center;">
-            <label for="postId">Enter Post ID:</label>
-            <br>
-            <input id="postId" name="postId" type="text" style="width: 100px;" required >
-            <br/>
+<% if (view.equals("No pending posts.")) { %>
+    <p>No pending posts exist</p>
+<% } else { %>
+    <label>All pending Blog Posts:</label>
+    <br/>
+    <p><%= view.replaceAll("\n", "<br/>") %></p>
+    <br>
 
-            <label for="moderationDecision">Enter Decision (Rejected/Approved):</label>
-            <br>
-  
-            <select id="moderationDecision" name="moderationDecision"  style="font-size: 16px;" required>
-                <option value="Approved">Approved</option>
-                <option value="Rejected">Rejected</option>
-            </select>
-        
-            <br/>
+    <div style="text-align: center;">
+        <label for="postId">Enter Post ID:</label>
+        <br>
+        <input id="postId" name="postId" type="text" style="width: 100px;" required>
+        <br/>
 
-            <label for="reason">Enter rejection reason:</label>
-            <br/>
-            <input id="reason" name="reason" type="text" style="width: 250px;">
-                </div>
-            <br/>
+        <label for="moderationDecision">Enter Decision (Rejected/Approved):</label>
+        <br>
+        <select id="moderationDecision" name="moderationDecision" style="font-size: 16px;" required>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+        </select>
 
-             <div class="button-container">
-            <button type="submit">Submit Decision</button>
-        </div>
+        <br/>
 
-            <% if (moderationDecision != null && moderationDecision.equals("Rejected") && (rejectionReason == null || rejectionReason.trim().isEmpty())) { %>
-                <p class="error-message">Rejection reason is required</p>
-            <% } %>
+        <label for="reason">Enter rejection reason:</label>
+        <br/>
+        <input id="reason" name="reason" type="text" style="width: 250px;">
+    </div>
+    <br/>
 
-            <% if (inputError) { %>
-                <p class="error-message">Post ID and Decision are required</p>
-            <% } %>
-        <% } %>
-    <br/> 
-        <% if (moderationResult != null) { %>
-       <p>Result: <%= moderationResult %></p>
-        <% } %>
+    <div class="button-container">
+        <button type="submit">Submit Decision</button>
+    </div>
+
+    <% if (moderationDecision != null && moderationDecision.equals("Rejected") && (rejectionReason == null || rejectionReason.trim().isEmpty())) { %>
+        <p class="error-message">Rejection reason is required</p>
+    <% } %>
+
+    <% if (moderationDecision != null && moderationDecision.equals("Approved") && (rejectionReason != null && !rejectionReason.trim().isEmpty())) { %>
+        <p class="error-message">Rejection reason is not required</p>
+    <% } %>
+
+    <% if (inputError) { %>
+        <p class="error-message">Post ID and Decision are required</p>
+    <% } %>
+
+    <% if (moderationResult != null) { %>
+        <p class="error-message"><%= moderationResult %></p>
+    <% } %>
+<% } %>
     </form>
 </body>
 </html>
